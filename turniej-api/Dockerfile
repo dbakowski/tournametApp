@@ -4,7 +4,6 @@ RUN npm install -g sails grunt npm-check-updates
 
 WORKDIR ./turniej-api
 
-#COPY ./turniej-api/package.json /package.json
 RUN npm install sails -g
 RUN npm install sails-mongo -g
 RUN npm install nodemon -g
