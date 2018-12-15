@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Utwórz gracza</h1>
+  <div class="d-flex justify-content-end" id="button-container">
+    <a href="/players-panel">
+      <button type="button" class="btn btn-success">Wróc do listy</button>
+    </a>
+  </div>
+  <form action="/players-panel/create" method="post">
+    <div class="form-group">
+      <label for="nickname">Nick: </label>
+      <input type="text" class="form-control" name="nickname" id="nickname">
+    </div>
+    <div class="form-group">
+      <label for="class-name">Klasa: </label>
+      <input type="text" class="form-control" name="className" id="class-name">
+    </div>
+    <div class="form-group">
+      <label for="team">Team</label>
+      <input type="text" class="form-control" name="team" id="team">
+      <!--Dodać selecta z api teamów-->
+    </div>
+    <div class="form-group">
+      <label for="rank">Ranga</label>
+      <input type="text" class="form-control" name="rank" id="rank">
+    </div>
+    <div class="form-group">
+      <button id="submit" class="btn btn-primary" type="submit">Zapisz</button>
+    </div>
+  </form>
+</div>
+<script src="/js/players-panel/validateForm.js"></script>

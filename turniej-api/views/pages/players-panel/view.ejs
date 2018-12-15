@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Gracz: <%= player.nickname %></h1>
+  <div class="d-flex justify-content-end" id="button-container">
+    <a href="/players-panel">
+      <button type="button" class="btn btn-success">Wróc do listy</button>
+    </a>
+    <button data-nick="<%= player.nickname %>" data-id="<%= player.id %>" type="button" class="btn btn-danger delete">
+      Usuń
+    </button>
+    <a href="/players-panel/update?id=<%= player.id %>">
+      <button type="button" class="btn btn-primary">Update</button>
+    </a>
+  </div>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nick</th>
+      <th scope="col">Klasa</th>
+      <th scope="col">Team</th>
+      <th scope="col">Ranga</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row"><%= player.id %></th>
+      <td><%= player.nickname %></td>
+      <td><%= player.className %></td>
+      <td><%= player.team %></td>
+      <td><%= player.rank %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script>
+  var isView = true;
+</script>
+<script src="/js/crud/delete.js"></script>

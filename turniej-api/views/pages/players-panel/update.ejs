@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Update gracza</h1>
+  <div class="d-flex justify-content-end" id="button-container">
+    <a href="/players-panel">
+      <button type="button" class="btn btn-success">Wróc do listy</button>
+    </a>
+  </div>
+  <form action="/players-panel/update?id=<%= player.id %>" method="post">
+    <div class="form-group">
+      <label for="nickname">Nick: </label>
+      <input value="<%= player.nickname %>" type="text" class="form-control" name="nickname" id="nickname">
+    </div>
+    <div class="form-group">
+      <label for="class-name">Klasa: </label>
+      <input value="<%= player.className %>" type="text" class="form-control" name="className" id="class-name">
+    </div>
+    <div class="form-group">
+      <label for="team">Team</label>
+      <input value="<%= player.team %>" type="text" class="form-control" name="team" id="team">
+      <!--Dodać selecta z api teamów-->
+    </div>
+    <div class="form-group">
+      <label for="rank">Ranga</label>
+      <input value="<%= player.rank %>" type="text" class="form-control" name="rank" id="rank">
+    </div>
+    <div class="form-group">
+      <button id="submit" class="btn btn-primary" type="submit">Zapisz</button>
+    </div>
+  </form>
+</div>
+<script src="/js/players-panel/validateForm.js"></script>

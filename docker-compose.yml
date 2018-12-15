@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  mongodb:
+    image: 'bitnami/mongodb:3.6'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - "27017:27017"
+    volumes:
+      - 'mongodb_data:/bitnami'
+  sails:
+    build:
+      context: .
+      dockerfile: ./turniej-api/Dockerfile
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/turniej-api
+    ports:
+      - 1337:1337
+    links:
+      - mongodb
+
+volumes:
+  mongodb_data:
+    driver: local
