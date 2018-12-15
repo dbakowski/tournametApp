@@ -22,12 +22,14 @@
         <td><%= player.nickname %></td>
         <td><%= player.className %></td>
         <td><%= player.rank %></td>
-        <td>
-          <a href="/players-panel/view?id=<%= player.id %>"><i class="far fa-eye"></i></a>
-          <a href="/players-panel/update?id=<%= player.id %>"><i class="far fa-edit"></i></a>
-          <a class="delete" data-nick="<%= player.nickname %>" data-id="<%= player.id %>"><i
-              class="far fa-trash-alt"></i></a>
-        </td>
+        <%- partial('../../layouts/partials/crud_index_buttons.ejs', {
+          model: {
+            panelName: 'players',
+            id: player.id,
+            name: player.nickname
+          }
+        })
+        %>
       </tr>
     <% }) %>
     </tbody>

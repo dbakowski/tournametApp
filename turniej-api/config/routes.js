@@ -27,6 +27,13 @@ module.exports.routes = {
   '/players-panel/create': {action: 'players-panel/create'},
   '/players-panel/update': {action: 'players-panel/update'},
 
+  'GET /teams-panel/': {action: 'teams-panel/index'},
+  'GET /teams-panel/index': {action: 'teams-panel/index'},
+  'GET /teams-panel/view': {action: 'teams-panel/view'},
+  'POST /teams-panel/delete': {action: 'teams-panel/delete'},
+  '/teams-panel/create': {action: 'teams-panel/create'},
+  '/teams-panel/update': {action: 'teams-panel/update'},
+
 
   /***************************************************************************
    *                                                                          *

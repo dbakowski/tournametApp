@@ -1,0 +1,12 @@
+<h1>Gracz: <%= model.name %></h1>
+<div class="d-flex justify-content-end" id="button-container">
+  <a href="/<%= model.panelName %>-panel">
+    <button type="button" class="btn btn-success">Wróc do listy</button>
+  </a>
+  <button data-name="<%= model.name %>" data-id="<%= model.id %>" type="button" class="btn btn-danger delete">
+    Usuń
+  </button>
+  <a href="/<%= model.panelName %>-panel/update?id=<%= model.id %>">
+    <button type="button" class="btn btn-primary">Update</button>
+  </a>
+</div>

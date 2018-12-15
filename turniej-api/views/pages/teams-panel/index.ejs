@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Lista teamów</h1>
+  <div class="d-flex justify-content-end" id="button-container">
+    <a class="pull-right" href="/teams-panel/create">
+      <button type="button" class="btn btn-outline-primary">Utwórz</button>
+    </a>
+  </div>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nazwa</th>
+    </tr>
+    </thead>
+    <tbody id="records">
+    <% teams.forEach(function (team) { %>
+      <tr>
+        <th scope="row"><%= team.id %></th>
+        <td><%= team.name %></td>
+        <%- partial('../../layouts/partials/crud_index_buttons.ejs', {model: {
+            panelName: 'teams',
+            id: team.id,
+            name: team.name
+          }})
+        %>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+<script>
+  var isView = true;
+</script>
+<script src="/js/crud/delete.js"></script>
