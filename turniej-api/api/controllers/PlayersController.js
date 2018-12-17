@@ -8,7 +8,6 @@
 module.exports = {
   async getPlayersByNickname(req, res) {
     return res.send(await Players.find({nickname: {'contains': req.param('nickname')}}))
-
   },
 
   async getPlayersByTeam(req, res) {
