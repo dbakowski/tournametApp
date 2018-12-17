@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-12">
+    <ul *ngIf="players">
+      <li *ngFor="let player of players">
+        <p>Nick: {{player.nickname}}</p>
+        <p>Team: {{player.team}}</p>
+        <p *ngIf="player.rank"> Ranga: {{player.rank}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
