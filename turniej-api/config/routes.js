@@ -20,6 +20,8 @@ module.exports.routes = {
    ***************************************************************************/
 
   '/': {view: 'pages/homepage'},
+
+  //Players
   'GET /players-panel/': {action: 'players-panel/index'},
   'GET /players-panel/index': {action: 'players-panel/index'},
   'GET /players-panel/view': {action: 'players-panel/view'},
@@ -27,6 +29,12 @@ module.exports.routes = {
   '/players-panel/create': {action: 'players-panel/create'},
   '/players-panel/update': {action: 'players-panel/update'},
 
+  'GET /players/team/:team': 'PlayersController.getPlayersByTeam',
+  'GET /players/rank/:rank': 'PlayersController.getPlayersByRank',
+  'GET /players/nickname/:nickname': 'PlayersController.getPlayersByNickname',
+  'GET /players/classname/:classname': 'PlayersController.getPlayersByClassname',
+
+  //Teams
   'GET /teams-panel/': {action: 'teams-panel/index'},
   'GET /teams-panel/index': {action: 'teams-panel/index'},
   'GET /teams-panel/view': {action: 'teams-panel/view'},
