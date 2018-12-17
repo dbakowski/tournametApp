@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
+import {ActivatedRoute} from "@angular/router";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-players',
@@ -9,14 +12,40 @@ import {DataService} from "../data.service";
 export class PlayersComponent implements OnInit {
 
   players: Object;
+  searchForm: FormGroup;
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit() {
-    this.dataService.getPlayers().subscribe(data => {
-      this.players = data;
-      console.log(data);
-    })
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
   }
 
+  ngOnInit() {
+    this.searchForm = this.formBuilder.group({
+      nickname: ['']
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.dataService.getPlayers({
+        params: {
+          category: 'nickname',
+          query: params.getUserByName
+        }
+      }).subscribe(data => {
+        this.players = data;
+      });
+    });
+
+    this.route.paramMap.subscribe(params => {
+      this.dataService.getPlayers(params).subscribe(data => {
+        this.players = data;
+      });
+    });
+  }
+
+  searchPlayer(query) {
+    this.router.navigateByUrl('/players?getUserByName=' + query);
+  }
 }

@@ -6,22 +6,20 @@
  */
 
 module.exports = {
+  async getPlayersByNickname(req, res) {
+    return res.send(await Players.find({nickname: {'contains': req.param('nickname')}}))
+
+  },
+
   async getPlayersByTeam(req, res) {
     return res.send(await Players.find({team: req.param('team')}))
   },
 
   async getPlayersByRank(req, res) {
     return res.send(await Players.find({rank: req.param('rank')}))
-
-  },
-
-  async getPlayersByNickname(req, res) {
-    return res.send(await Players.find({nickname: req.param('nickname')}))
-
   },
 
   async getPlayersByClassname(req, res) {
     return res.send(await Players.find({className: req.param('classname')}))
-
   },
 };

@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {PlayersComponent} from "./players/players.component";
 
 const routes: Routes = [
-  {path: 'players', component: PlayersComponent}
+  {path: 'players', component: PlayersComponent},
+  {path: 'players/:category/:query', component: PlayersComponent},
 ];
 
 @NgModule({

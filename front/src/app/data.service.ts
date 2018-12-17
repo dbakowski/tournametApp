@@ -9,7 +9,9 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
-  getPlayers() {
-    return this.http.get('http://localhost:1337/players');
+  getPlayers(params) {
+    return params.params.category && params.params.query
+      ? this.http.get('http://localhost:1337/players/' + params.params.category + '/' + params.params.query)
+      : this.http.get('http://localhost:1337/players')
   }
 }
