@@ -61,7 +61,9 @@ module.exports = {
       return exits.view('/players-panel/view?id=' + player.id)
     }
 
-    return exits.form({player: player});
+    let teamsDropdown = await sails.helpers.dbDropdown(Teams, 'name', 'team');
+
+    return exits.form({player: player, dropdown: teamsDropdown});
   }
 
 };

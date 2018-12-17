@@ -41,10 +41,13 @@ module.exports = {
         rank: inputs.rank
       }).fetch();
     }
+    else {
+      var teamsDropdown = await sails.helpers.dbDropdown(Teams, 'name', 'team');
+    }
 
     return player
       ? exits.view('/players-panel/view?id=' + player.id)
-      : exits.form();
+      : exits.form({dropdown: teamsDropdown});
   }
 
 };

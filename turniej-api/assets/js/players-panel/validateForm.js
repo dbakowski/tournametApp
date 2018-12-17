@@ -23,6 +23,8 @@
     if (team.value.length < 1) {
       team.classList.add('is-invalid');
       valid = false;
+    } else if(true) { //change
+
     } else {
       team.classList.remove('is-invalid');
     }

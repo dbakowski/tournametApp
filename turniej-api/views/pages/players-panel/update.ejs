@@ -16,8 +16,7 @@
     </div>
     <div class="form-group">
       <label for="team">Team</label>
-      <input value="<%= player.team %>" type="text" class="form-control" name="team" id="team">
-      <!--Dodać selecta z api teamów-->
+      <%- dropdown %>
     </div>
     <div class="form-group">
       <label for="rank">Ranga</label>
@@ -28,4 +27,7 @@
     </div>
   </form>
 </div>
+<script>
+  var players_team_name = <%= player.team %>; //find how to
+</script>
 <script src="/js/players-panel/validateForm.js"></script>

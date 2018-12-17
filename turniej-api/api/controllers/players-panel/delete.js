@@ -14,7 +14,6 @@ module.exports = {
     }
   },
 
-
   exits: {
     notFound: {
       description: 'Could not find record with passed id',
