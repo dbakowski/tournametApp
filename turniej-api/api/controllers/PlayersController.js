@@ -23,7 +23,7 @@ module.exports = {
   },
 
   async getPlayersByNickname(req, res) {
-    return res.send(await Players.find({nickname:req.param('nickname')}))
+    return res.send(await Players.find({nickname: req.param('nickname')}))
   },
 
   async getPlayersByTeam(req, res) {

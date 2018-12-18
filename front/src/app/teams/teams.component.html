@@ -1,6 +1,6 @@
-<form class="d-flex justify-content-end form-inline" [formGroup]="searchForm">
+<form class="d-flex justify-content-end" [formGroup]="searchForm">
   <div class="form-group">
-    <input id="player-search-box" placeholder="Wyszukaj" class="form-control"
+    <input placeholder="Wyszukaj" class="form-control"
            (keyup)="searchTeam(searchForm.controls.teamname.value)" type="text"
            formControlName="teamname">
   </div>
