@@ -26,21 +26,23 @@ export class TeamsComponent implements OnInit {
       teamname: ['']
     });
 
-    this.route.queryParams.subscribe(params => {
-      this.dataService.getTeams({
-        params: {
-          category: 'search/name',
-          query: params.getTeamByName
-        }
-      }).subscribe(data => {
-        this.teams = data;
-      });
-    });
-
     this.route.paramMap.subscribe(params => {
       this.dataService.getTeams(params).subscribe(data => {
         this.teams = data;
       });
+    });
+
+    this.route.queryParams.subscribe(params => {
+      if(params.getTeamByName != null) {
+        this.dataService.getTeams({
+          params: {
+            category: 'search/name',
+            query: params.getTeamByName
+          }
+        }).subscribe(data => {
+          this.teams = data;
+        });
+      }
     });
   }
 
