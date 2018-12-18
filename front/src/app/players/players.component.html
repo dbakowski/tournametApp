@@ -1,15 +1,15 @@
-<form class="d-flex justify-content-end" [formGroup]="searchForm">
-  <label>
-    Wyszukaj:
-    <input (keyup)="searchPlayer(searchForm.controls.nickname.value)" type="text" formControlName="nickname">
-  </label>
+<form class="d-flex justify-content-end form-inline" [formGroup]="searchForm">
+  <div class="form-group">
+    <input id="player-search-box" placeholder="Wyszukaj" class="form-control" (keyup)="searchPlayer(searchForm.controls.nickname.value)" type="text"
+           formControlName="nickname">
+  </div>
 </form>
 <div class="row">
   <div class="col-12">
     <ul *ngIf="players">
       <li *ngFor="let player of players">
         <a routerLink="/players/nickname/{{player.nickname}}"><p>Nick: {{player.nickname}}</p></a>
-        <a routerLink="/players/team/{{player.team}}"><p>Team: {{player.team}}</p></a>
+        <a routerLink="/teams/name/{{player.team}}"><p>Team: {{player.team}}</p></a>
         <a routerLink="/players/rank/{{player.rank}}"><p *ngIf="player.rank"> Ranga: {{player.rank}}</p></a>
       </li>
     </ul>

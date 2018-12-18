@@ -30,7 +30,7 @@ export class PlayersComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.dataService.getPlayers({
         params: {
-          category: 'nickname',
+          category: 'search/nickname',
           query: params.getUserByName
         }
       }).subscribe(data => {
