@@ -19,6 +19,8 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
 
+  //TODO: Rewrite everything to machine-as-action.
+
   '/': {view: 'pages/homepage'},
 
   //Players
@@ -29,6 +31,13 @@ module.exports.routes = {
   '/players-panel/create': {action: 'players-panel/create'},
   '/players-panel/update': {action: 'players-panel/update'},
 
+  //Players search
+  'GET /players/search/team/:team': 'PlayersController.searchPlayersByTeam',
+  'GET /players/search/rank/:rank': 'PlayersController.searchPlayersByRank',
+  'GET /players/search/nickname/:nickname': 'PlayersController.searchPlayersByNickname',
+  'GET /players/search/classname/:classname': 'PlayersController.searchPlayersByClassname',
+
+  //Players strict search
   'GET /players/team/:team': 'PlayersController.getPlayersByTeam',
   'GET /players/rank/:rank': 'PlayersController.getPlayersByRank',
   'GET /players/nickname/:nickname': 'PlayersController.getPlayersByNickname',
@@ -41,6 +50,13 @@ module.exports.routes = {
   'POST /teams-panel/delete': {action: 'teams-panel/delete'},
   '/teams-panel/create': {action: 'teams-panel/create'},
   '/teams-panel/update': {action: 'teams-panel/update'},
+  'GET /teams': 'TeamsController.getTeams',
+
+  //Teams search
+  'GET /teams/search/name/:name': 'TeamsController.searchTeamsByName',
+
+  //Teams strict search
+  'GET /teams/name/:name': 'TeamsController.getTeamByName',
 
 
   /***************************************************************************
