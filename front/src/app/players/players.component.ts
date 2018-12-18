@@ -27,21 +27,23 @@ export class PlayersComponent implements OnInit {
       nickname: ['']
     });
 
-    this.route.queryParams.subscribe(params => {
-      this.dataService.getPlayers({
-        params: {
-          category: 'nickname',
-          query: params.getUserByName
-        }
-      }).subscribe(data => {
-        this.players = data;
-      });
-    });
-
     this.route.paramMap.subscribe(params => {
       this.dataService.getPlayers(params).subscribe(data => {
         this.players = data;
       });
+    });
+
+    this.route.queryParams.subscribe(params => {
+      if (params.getUserByName != null) {
+        this.dataService.getPlayers({
+          params: {
+            category: 'search/nickname',
+            query: params.getUserByName
+          }
+        }).subscribe(data => {
+          this.players = data;
+        });
+      }
     });
   }
 

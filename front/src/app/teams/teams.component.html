@@ -1,0 +1,22 @@
+<form class="d-flex justify-content-end" [formGroup]="searchForm">
+  <div class="form-group">
+    <input placeholder="Wyszukaj" class="form-control"
+           (keyup)="searchTeam(searchForm.controls.teamname.value)" type="text"
+           formControlName="teamname">
+  </div>
+</form>
+<div class="row">
+  <div class="col-12">
+    <ul *ngIf="teams">
+      <li *ngFor="let team of teams">
+        <a routerLink="/teams/name/{{team.name}}"><p>Team: {{team.name}}</p></a>
+        <ul *ngIf="team.players">
+          <p>Gracze: </p>
+          <li *ngFor="let player of team.players">
+            <a routerLink="/players/nickname/{{player.nickname}}"><p>{{player.nickname}}</p></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

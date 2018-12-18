@@ -2,8 +2,8 @@
   <h1>Team: <%= team.name %></h1>
   <%- partial('../../layouts/partials/crud_view_header.ejs', {model: {
       panelName: 'players',
-      id: player.id,
-      name: player.nickname
+      id: team.id,
+      name: team.name
     }})
   %>
   <table class="table table-dark">
