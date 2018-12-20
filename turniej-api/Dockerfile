@@ -3,9 +3,10 @@ FROM node:8.14.0-alpine
 WORKDIR /usr/src/app/turniej-api
 
 COPY ./turniej-api/package.json .
+
+RUN npm config delete registry
 RUN npm install -g sails grunt npm-check-updates
 RUN npm install -g
-RUN npm install sails -g
 RUN npm install sails-mongo -g
 RUN npm install nodemon -g
 
