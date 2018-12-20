@@ -20,11 +20,7 @@ function deleteRecord(elem) {
         200: function () {
           alert("Rekord został usunięty");
 
-          if (isView) {
-            document.location.href = href[0];
-          } else {
-            document.location.reload();
-          }
+          document.location.href = href[0];
         }
       }
     });

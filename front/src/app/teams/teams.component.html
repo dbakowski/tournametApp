@@ -1,19 +1,31 @@
-<form class="d-flex justify-content-end" [formGroup]="searchForm">
-  <div class="form-group">
-    <input placeholder="Wyszukaj" class="form-control"
-           (keyup)="searchTeam(searchForm.controls.teamname.value)" type="text"
-           formControlName="teamname">
-  </div>
-</form>
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 col-md-10 offset-md-1">
+    <form *ngIf="isIndex else backButton" class="d-flex justify-content-end" [formGroup]="searchForm">
+      <div class="form-group">
+        <input placeholder="Wyszukaj" class="form-control"
+               (keyup)="searchTeam(searchForm.controls.teamname.value)" type="text"
+               formControlName="teamname">
+      </div>
+    </form>
+    <ng-template #backButton>
+      <a routerLink="/teams"><button type="button" class="btn btn-dark">Wróć...</button></a>
+    </ng-template>
+    <h1>Teamy:</h1>
     <ul *ngIf="teams">
       <li *ngFor="let team of teams">
         <a routerLink="/teams/name/{{team.name}}"><p>Team: {{team.name}}</p></a>
         <ul *ngIf="team.players">
           <p>Gracze: </p>
           <li *ngFor="let player of team.players">
-            <a routerLink="/players/nickname/{{player.nickname}}"><p>{{player.nickname}}</p></a>
+            <a routerLink="/players/nickname/{{player.nickname}}">
+              <p>
+                {{player.nickname}}
+                <img *ngIf="!player.rank; else rank" src="assets/ranks/default.png">
+                <ng-template #rank>
+                  <img alt="{{player.rank}}" src="assets/ranks/{{player.rank}}.png">
+                </ng-template>
+              </p>
+            </a>
           </li>
         </ul>
       </li>

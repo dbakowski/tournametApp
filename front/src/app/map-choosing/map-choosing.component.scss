@@ -1,0 +1,67 @@
+.banned{
+  opacity: 0.2;
+}
+
+#map-display {
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  top: 0;
+}
+
+.tile {
+  overflow: hidden;
+  height: 200px;
+  padding: 10px;
+  position: relative;
+  transition: transform 0.1s ease-in-out, opacity 0.3s ease-in-out;
+
+  .map {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    border: 1px white solid;
+
+
+    .map-name {
+      position: absolute;
+      height: 40px;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 99;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+
+      span {
+        font-size: 20px;
+        height: 100%;
+        line-height: 40px;
+      }
+    }
+
+    img {
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+.tile:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  color: #fff;
+  padding-top: 100px;
+  position: relative;
+}

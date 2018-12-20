@@ -13,6 +13,7 @@ export class PlayersComponent implements OnInit {
 
   players: Object;
   searchForm: FormGroup;
+  isIndex: boolean;
 
   constructor(
     private dataService: DataService,
@@ -28,6 +29,9 @@ export class PlayersComponent implements OnInit {
     });
 
     this.route.paramMap.subscribe(params => {
+      // @ts-ignore
+      this.isIndex = !params.params.category && !params.params.query;
+
       this.dataService.getPlayers(params).subscribe(data => {
         this.players = data;
       });

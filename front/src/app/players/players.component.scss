@@ -1,23 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+h1{
+  color: white;
+}
+
+button {
+  margin-bottom: 40px;
+  border: 1px white solid;
+}
+
 ul {
   list-style-type: none;
   margin: 0;padding: 0;
+  font-size: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  a{
+    color: white;
+    padding: 0;
+  }
+
+  a:hover {
+    color: #001a47;
+  }
+
+  a, a:hover{
+    text-decoration: none;
+  }
 
   li {
-    background: rgb(238, 238, 238);
+    //background: rgb(238, 238, 238);
+    border: 1px white solid;
+    background-color: rgba(0,0,0,0.97);
     padding: 2em;
-    border-radius: 4px;
-    margin-bottom: 7px;
-    display: grid;
-    grid-template-columns: auto auto;
-
+    text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0;
+    
     p {
       font-weight: bold;
-      margin-left: 20px;
+      margin: 0;
     }
 
     img {
-      border-radius: 50%;
-      width: 100%;
+      width: 100px;
     }
   }
 }
@@ -28,4 +55,5 @@ ul {
 
 form{
   padding-top: 10px;
+  position: relative;
 }

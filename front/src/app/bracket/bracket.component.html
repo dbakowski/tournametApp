@@ -1,0 +1,96 @@
+<div class="container overflow-auto">
+  <h1>Turniej CS:GO Centrum Edukacji - Drabinka:</h1>
+  <div id="bracket">
+    <main id="tournament">
+      <ul class="round round-1">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[1] ? parsedMatches[1].isWinnerTop : false">{{parsedMatches[1] ? parsedMatches[1].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[1] ? parsedMatches[1].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[1] ? parsedMatches[1].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[1] ? parsedMatches[1].isWinnerBottom : false">{{parsedMatches[1] ? parsedMatches[1].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[1] ? parsedMatches[1].scoreBottom : ''}}</span></li>
+
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[2] ? parsedMatches[2].isWinnerTop : false">{{parsedMatches[2] ? parsedMatches[2].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[2] ? parsedMatches[2].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[2] ? parsedMatches[2].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[2] ? parsedMatches[2].isWinnerBottom : false">{{parsedMatches[2] ? parsedMatches[2].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[2] ? parsedMatches[2].scoreBottom : ''}}</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[3] ? parsedMatches[3].isWinnerTop : false">{{parsedMatches[3] ? parsedMatches[3].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[3] ? parsedMatches[3].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[3] ? parsedMatches[3].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[3] ? parsedMatches[3].isWinnerBottom : false">{{parsedMatches[3] ? parsedMatches[3].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[3] ? parsedMatches[3].scoreBottom : ''}}</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[4] ? parsedMatches[1].isWinnerTop : false">{{parsedMatches[1] ? parsedMatches[1].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[1] ? parsedMatches[1].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[1] ? parsedMatches[1].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[1] ? parsedMatches[1].isWinnerBottom : false">{{parsedMatches[1] ? parsedMatches[1].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[1] ? parsedMatches[1].scoreBottom : ''}}</span></li>
+
+        <li class="spacer">&nbsp;</li>
+      </ul>
+      <ul class="round round-2">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[5] ? parsedMatches[5].isWinnerTop : false">{{parsedMatches[5] ? parsedMatches[5].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[5] ? parsedMatches[5].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[5] ? parsedMatches[5].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[5] ? parsedMatches[5].isWinnerBottom : false">{{parsedMatches[5] ? parsedMatches[5].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[5] ? parsedMatches[5].scoreBottom : ''}}</span></li>
+
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[6] ? parsedMatches[6].isWinnerTop : false">{{parsedMatches[6] ? parsedMatches[6].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[6] ? parsedMatches[6].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[6] ? parsedMatches[6].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[6] ? parsedMatches[6].isWinnerBottom : false">{{parsedMatches[6] ? parsedMatches[6].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[6] ? parsedMatches[6].scoreBottom : ''}}</span></li>
+
+        <li class="spacer">&nbsp;</li>
+      </ul>
+      <ul class="round round-3">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[7] ? parsedMatches[7].isWinnerTop : false">{{parsedMatches[7] ? parsedMatches[7].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[7] ? parsedMatches[7].scoreTop : ''}}</span></li>
+        <li class="game game-spacer">{{parsedMatches[7] ? parsedMatches[7].date.replace('T', ' ') : ''}}</li>
+        <li class="game game-bottom"
+            [class.winner]="parsedMatches[7] ? parsedMatches[7].isWinnerBottom : false">{{parsedMatches[7] ? parsedMatches[7].teamnameBottom : 'TBD'}}
+          <span>{{parsedMatches[7] ? parsedMatches[7].scoreBottom : ''}}</span></li>
+
+        <li class="spacer"></li>
+      </ul>
+      <ul class="round round-4">
+        <li class="spacer">&nbsp;</li>
+
+        <li class="game game-top"
+            [class.winner]="parsedMatches[8] ? parsedMatches[8].isWinnerTop : false">{{parsedMatches[8] ? parsedMatches[8].teamnameTop : 'TBD'}}
+          <span>{{parsedMatches[8] ? parsedMatches[8].scoreTop : ''}}</span></li>
+
+        <li class="spacer">&nbsp;</li>
+      </ul>
+    </main>
+  </div>
+</div>

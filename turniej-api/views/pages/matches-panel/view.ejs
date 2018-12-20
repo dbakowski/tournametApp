@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Mecz: <%= model.no %></h1>
+  <%- partial('../../layouts/partials/crud_view_header.ejs', {
+    model: {
+      panelName: 'matches',
+      id: model.id,
+      name: model.no
+    }
+  })
+  %>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Teamy</th>
+      <th scope="col">Wyniki</th>
+      <th scope="col">Data</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row"><%= model.no %></th>
+      <td><%= model.teamnameTop + ' vs ' + model.teamnameBottom %></td>
+      <td><%= model.scoreTop + ' do ' + model.scoreBottom %></td>
+      <td><%= model.date %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="/js/crud/delete.js"></script>

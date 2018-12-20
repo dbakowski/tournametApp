@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Team: <%= team.name %></h1>
   <%- partial('../../layouts/partials/crud_view_header.ejs', {model: {
-      panelName: 'players',
+      panelName: 'teams',
       id: team.id,
       name: team.name
     }})
@@ -21,7 +21,4 @@
     </tbody>
   </table>
 </div>
-<script>
-  var isView = true;
-</script>
 <script src="/js/crud/delete.js"></script>

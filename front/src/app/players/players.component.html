@@ -1,17 +1,33 @@
-<form class="d-flex justify-content-end" [formGroup]="searchForm">
-  <div class="form-group">
-    <input placeholder="Wyszukaj" class="form-control" (keyup)="searchPlayer(searchForm.controls.nickname.value)" type="text"
-           formControlName="nickname">
-  </div>
-</form>
-<div class="row">
-  <div class="col-12">
-    <ul *ngIf="players">
-      <li *ngFor="let player of players">
-        <a routerLink="/players/nickname/{{player.nickname}}"><p>Nick: {{player.nickname}}</p></a>
-        <a routerLink="/teams/name/{{player.team}}"><p>Team: {{player.team}}</p></a>
-        <a routerLink="/players/rank/{{player.rank}}"><p *ngIf="player.rank"> Ranga: {{player.rank}}</p></a>
-      </li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 offset-md-1">
+      <form *ngIf="isIndex else backButton" class="d-flex justify-content-end" [formGroup]="searchForm">
+        <div class="form-group">
+          <input placeholder="Wyszukaj" class="form-control" (keyup)="searchPlayer(searchForm.controls.nickname.value)"
+                 type="text"
+                 formControlName="nickname">
+        </div>
+      </form>
+      <ng-template #backButton>
+        <a routerLink="/players"><button type="button" class="btn btn-dark">Wróć...</button></a>
+      </ng-template>
+      <h1>Gracze:</h1>
+      <ul *ngIf="players">
+        <li class="row col-12" *ngFor="let player of players">
+          <!--TODO: Wyciągnąć do partialsa-->
+          <a class="col-12 col-md-4" routerLink="/players/nickname/{{player.nickname}}"><p>Nick: {{player.nickname}}</p>
+          </a>
+          <a class="col-12 col-md-4" routerLink="/teams/name/{{player.team}}"><p>Team: {{player.team}}</p></a>
+          <a class="col-12 col-md-4" routerLink="/players/rank/{{player.rank}}">
+            <p> Ranga:
+              <img *ngIf="!player.rank; else rank" src="assets/ranks/default.png">
+            </p>
+            <ng-template #rank>
+              <img alt="{{player.rank}}" src="assets/ranks/{{player.rank}}.png">
+            </ng-template>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -58,6 +58,23 @@ module.exports.routes = {
   //Teams strict search
   'GET /teams/name/:name': 'TeamsController.getTeamByName',
 
+  //Matches
+  'GET /matches-panel/': {action: 'matches-panel/index'},
+  'GET /matches-panel/index': {action: 'matches-panel/index'},
+  'GET /matches-panel/view': {action: 'matches-panel/view'},
+  'POST /matches-panel/delete': {action: 'matches-panel/delete'},
+  '/matches-panel/create': {action: 'matches-panel/create'},
+  '/matches-panel/update': {action: 'matches-panel/update'},
+
+  'GET /matches/no/:no': 'MatchesController.searchMatchesByNo',
+
+  // Articles
+  'GET /articles-panel/': {action: 'articles-panel/index'},
+  'GET /articles-panel/index': {action: 'articles-panel/index'},
+  'GET /articles-panel/view': {action: 'articles-panel/view'},
+  'POST /articles-panel/delete': {action: 'articles-panel/delete'},
+  '/articles-panel/create': {action: 'articles-panel/create'},
+  '/articles-panel/update': {action: 'articles-panel/update'},
 
   /***************************************************************************
    *                                                                          *

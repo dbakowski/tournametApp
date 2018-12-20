@@ -11,7 +11,7 @@ import { GlobalsService } from "../globals.service";
 })
 export class NavComponent implements OnInit {
 
-  constructor(private globals: GlobalsService) { }
+  constructor(public globals: GlobalsService) { }
 
   ngOnInit() {
   }

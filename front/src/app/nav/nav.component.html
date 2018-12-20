@@ -1,7 +1,10 @@
 <header>
   <nav class="nav justify-content-end">
-    <a routerLink="/" class="nav-link active">{{globals.appname}}</a>
-    <a routerLink="/players" class="nav-link active">Gracze</a>
-    <a routerLink="/teams" class="nav-link active">Teamy</a>
+    <a routerLink="" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}">{{globals.appname}}</a>
+    <a routerLink="/players" class="nav-link" routerLinkActive="active">Gracze</a>
+    <a routerLink="/teams" class="nav-link" routerLinkActive="active">Teamy</a>
+    <a routerLink="/bracket" class="nav-link" routerLinkActive="active">Drabinka</a>
+    <a routerLink="/map-choosing" class="nav-link" routerLinkActive="active">Wybór mapy</a>
   </nav>
 </header>

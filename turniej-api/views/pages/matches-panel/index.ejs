@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Lista meczy</h1>
+  <div class="d-flex justify-content-end" id="button-container">
+    <a class="pull-right" href="/matches-panel/create">
+      <button type="button" class="btn btn-outline-primary">Utwórz</button>
+    </a>
+  </div>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Teamy</th>
+      <th scope="col">Wyniki</th>
+      <th scope="col">Data</th>
+      <th scope="col">Akcje</th>
+    </tr>
+    </thead>
+    <tbody id="records">
+    <% matches.forEach(function (match) { %>
+      <tr>
+        <th scope="row"><%= match.no %></th>
+        <td><%= match.teamnameTop + ' vs ' + match.teamnameBottom %></td>
+        <td><%= match.scoreTop + ' do ' + match.scoreBottom %></td>
+        <!-- TODO: change message if scores empty -->
+        <td><%= match.date %></td>
+        <%- partial('../../layouts/partials/crud_index_buttons.ejs', {
+          model: {
+            panelName: 'matches',
+            id: match.id,
+            name: match.teamnameTop + ' vs ' + match.teamnameBottom
+          }
+        })
+        %>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+<script src="/js/crud/delete.js"></script>

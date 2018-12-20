@@ -1,0 +1,48 @@
+<div id="map-display"></div>
+<div class="container">
+  <h1>It's time to choose:</h1>
+  <div id="map-choosing" class="row">
+    <div (click)="banMap('inferno')" [class.banned]="isInfernoBanned" [ngClass]="'inferno col-12 col-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/inferno.jpg" alt="Inferno">
+        <div class="map-name"><span>Inferno</span></div>
+      </div>
+    </div>
+    <div (click)="banMap('train')" [class.banned]="isTrainBanned" [ngClass]="'train col-12 col-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/train.jpg" alt="Train">
+        <div class="map-name"><span>Train</span></div>
+      </div>
+    </div>
+    <div (click)="banMap('mirage')" [class.banned]="isMirageBanned" [ngClass]="'mirage col-12 col-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/mirage.jpg" alt="Mirage">
+        <div class="map-name"><span>Mirage</span></div>
+      </div>
+    </div>
+    <div (click)="banMap('nuke')" [class.banned]="isNukeBanned" [ngClass]="'nuke col-12 col-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/nuke.jpg" alt="Nuke">
+        <div class="map-name"><span>Nuke</span></div>
+      </div>
+    </div>
+    <div (click)="banMap('overpass')" [class.banned]="isOverpassBanned" [ngClass]="'overpass col-12 col-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/overpass.jpg" alt="Overpass">
+        <div class="map-name"><span>Overpass</span></div>
+      </div>
+    </div>
+    <div (click)="banMap('cache')" [class.banned]="isCacheBanned" [ngClass]="'cache col-12 col-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/cache.png" alt="Cache">
+        <div class="map-name"><span>Cache</span></div>
+      </div>
+    </div>
+    <div (click)="banMap('dust2')" [class.banned]="isDust2Banned" [ngClass]="'dust2 col-12 col-md-4 offset-md-4 tile'">
+      <div class="map">
+        <img src="assets/maps/dust2.jpg" alt="Dust 2">
+        <div class="map-name"><span>Dust 2</span></div>
+      </div>
+    </div>
+  </div>
+</div>

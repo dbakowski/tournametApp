@@ -1,0 +1,17 @@
+<div class="container overflow-auto">
+  <div class="row">
+    <div class="news-panel col-12">
+      <h1 *ngIf="articles">{{articles.title}}</h1>
+      <article *ngIf="articles">
+        <p>
+          {{articles.body}}
+        </p>
+        <div class="stream">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aJwNs4bBuwU" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

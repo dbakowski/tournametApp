@@ -1,7 +1,9 @@
 header {
-  background: #7700FF;
+  background: #aa0000;
   width: 100%;
   padding: 0;
+  z-index: 99;
+  position: relative;
 
   a{
     padding: 1.5em;
@@ -10,7 +12,11 @@ header {
     color: white;
 
     &:hover {
-      background: #8E2BFF;
+      background: #cc0202;
     }
+  }
+
+  .active {
+    background: #cc0202;
   }
 }

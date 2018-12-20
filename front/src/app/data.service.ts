@@ -9,6 +9,14 @@ export class DataService {
   constructor(private http: HttpClient) {
   }
 
+  getArticles() {
+    return this.http.get('http://localhost:1337/articles');
+  }
+
+  getMatches() {
+    return this.http.get('http://localhost:1337/matches');
+  }
+
   getPlayers(params) {
     return params.params.category && params.params.query
       ? this.http.get('http://localhost:1337/players/' + params.params.category + '/' + params.params.query)

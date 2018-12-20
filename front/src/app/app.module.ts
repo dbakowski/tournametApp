@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { PlayersComponent } from './players/players.component';
 import { TeamsComponent } from './teams/teams.component';
+import { BracketComponent } from './bracket/bracket.component';
+import { MapChoosingComponent } from './map-choosing/map-choosing.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { TeamsComponent } from './teams/teams.component';
     NavComponent,
     PlayersComponent,
     TeamsComponent,
+    BracketComponent,
+    MapChoosingComponent,
+    HomeComponent,
   ],
   imports: [
     HttpClientModule,
