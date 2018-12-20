@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - .:/usr/local/app
+      - .:/usr/src/app
     ports:
       - 1337:1337
     links:
