@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - .:/turniej-api
+      - .:/usr/local/app
     ports:
       - 1337:1337
     links:
