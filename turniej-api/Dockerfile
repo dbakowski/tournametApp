@@ -2,8 +2,7 @@ FROM node:8.14.0-alpine
 
 WORKDIR ./turniej-api
 
-RUN ls
-#RUN npm install sails grunt npm-check-updates
+RUN npm install
 #RUN npm install sails-mongo
 #RUN npm install nodemon
 #
