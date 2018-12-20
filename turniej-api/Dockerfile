@@ -1,6 +1,8 @@
 FROM node:8.14.0-alpine
 
-WORKDIR /
+WORKDIR /turniej-api
+
+COPY ./turniej-api/package.json .
 
 RUN ls -all
 
