@@ -4,11 +4,11 @@ WORKDIR /usr/src/app/turniej-api
 
 COPY ./turniej-api/package.json .
 
-#RUN npm install
-#RUN npm install sails -g
-#RUN npm install sails-mongo -g
-#RUN npm install nodemon -g
-#
+RUN npm install -g
+RUN npm install sails -g
+RUN npm install sails-mongo -g
+RUN npm install nodemon -g
+
 COPY ./turniej-api/entrypoint.sh .
 
 RUN sed -i 's/\r//' ./entrypoint.sh
@@ -16,3 +16,4 @@ RUN chmod 777 ./entrypoint.sh
 RUN ls -all
 
 ENTRYPOINT ./entrypoint.sh
+s
