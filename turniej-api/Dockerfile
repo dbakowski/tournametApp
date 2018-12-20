@@ -1,7 +1,5 @@
 FROM node:8.14.0-alpine
 
-WORKDIR ./turniej-api
-
 RUN npm install
 #RUN npm install sails-mongo
 #RUN npm install nodemon
