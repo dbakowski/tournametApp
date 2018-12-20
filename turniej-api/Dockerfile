@@ -12,7 +12,8 @@ COPY ./turniej-api/package.json .
 COPY ./turniej-api/entrypoint.sh .
 
 RUN ls -all
-#RUN sed -i 's/\r//' ./entrypoint.sh
-#RUN chmod +x /usr/local/app/turniej-api/entrypoint.sh
+RUN sed -i 's/\r//' ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
+RUN ls -all
 
 #ENTRYPOINT ["/usr/local/app/turniej-api/entrypoint.sh"]
