@@ -1,5 +1,7 @@
 FROM node:8.14.0-alpine
 
+WORKDIR ./turniej-api
+
 RUN ls -all
 
 RUN npm install
