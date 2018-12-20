@@ -7,7 +7,8 @@ COPY ./turniej-api/package.json .
 RUN ls -all
 
 RUN npm install
-RUN npm install sails-mongo
+RUN npm install sails -g
+RUN npm install sails-mongo -g
 RUN npm install nodemon -g
 
 COPY ./turniej-api/entrypoint.sh /entrypoint.sh
