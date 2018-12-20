@@ -21,7 +21,17 @@ services:
       - 1337:1337
     links:
       - mongodb
-
+  apache:
+    build:
+      context: .
+      dockerfile: ./front/Dockerfile
+    depends_on:
+      - mongodb
+    volumes:
+      - ./front/dist/front:/usr/local/apache2/htdocs/
+#      - /usr/local/apache2/conf/httpd.conf:/front/my-httpd.conf
+    ports:
+      - 80:80
 volumes:
   mongodb_data:
     driver: local
