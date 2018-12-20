@@ -15,4 +15,4 @@ RUN sed -i 's/\r//' ./entrypoint.sh
 RUN chmod 777 ./entrypoint.sh
 RUN ls -all
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ./entrypoint.sh
