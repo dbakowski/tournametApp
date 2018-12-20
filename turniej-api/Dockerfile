@@ -16,4 +16,3 @@ RUN chmod 777 ./entrypoint.sh
 RUN ls -all
 
 ENTRYPOINT ./entrypoint.sh
-s
