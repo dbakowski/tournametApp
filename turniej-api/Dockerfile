@@ -1,5 +1,6 @@
 FROM node:8.14.0-alpine
 
+RUN cd usr
 RUN ls -all
 
 RUN npm install
