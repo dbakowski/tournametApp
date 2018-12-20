@@ -1,5 +1,7 @@
 FROM node:8.14.0-alpine
 
+RUN ls -all
+
 RUN npm install
 #RUN npm install sails-mongo
 #RUN npm install nodemon
