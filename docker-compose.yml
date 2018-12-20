@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - ./turniej-api:.
+      - ./turniej-api:./turniej-api
     ports:
       - 1337:1337
     links:
@@ -29,7 +29,6 @@ services:
       - mongodb
     volumes:
       - ./front/dist/front:/usr/local/apache2/htdocs/
-#      - /usr/local/apache2/conf/httpd.conf:/front/my-httpd.conf
     ports:
       - 80:80
 volumes:
