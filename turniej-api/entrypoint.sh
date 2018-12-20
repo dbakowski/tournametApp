@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nodemon app.js
+nodemon app.js --prod
