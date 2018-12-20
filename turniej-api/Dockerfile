@@ -10,7 +10,7 @@ RUN npm install sails-mongo -g
 RUN npm install nodemon -g
 
 COPY ./turniej-api/entrypoint.sh .
-RUN sed -i 's/\r//' /entrypoint.sh
+RUN sed -i 's/\r//' entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
