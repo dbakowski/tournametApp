@@ -13,4 +13,4 @@ RUN ls
 #
 #WORKDIR ./turniej-api
 #
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
