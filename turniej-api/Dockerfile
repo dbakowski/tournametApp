@@ -1,6 +1,5 @@
 FROM node:8.14.0-alpine
 
-WORKDIR /home
 RUN ls -all
 
 RUN npm install
